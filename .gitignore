@@ -1,0 +1,32 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# --- 数据/模型（不入库）---
+models/
+models_cache/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# --- 运行时产物（由脚本生成）---
+outputs/**/tmp_*
+*.log
+wandb/
+
+# --- 本地一次性调试脚本（历史遗留，不入库）---
+scratch/
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- 大体积中间 JSON（按需再生成）---
+results/**/transfer_*.json

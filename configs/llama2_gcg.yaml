@@ -1,0 +1,35 @@
+# GCG 攻击配置：Llama-2-7B-Chat
+# 与 experiments/configs/individual_llama2.py 权威参数一致
+model:
+  path: llama-2-7b-chat-hf
+  conversation_template: llama-2
+  kwargs:
+    low_cpu_mem_usage: true
+    use_cache: false
+    load_in_4bit: true
+    bnb_4bit_compute_dtype: float16
+    device_map: cuda:0
+
+tokenizer:
+  path: llama-2-7b-chat-hf
+  kwargs:
+    use_fast: true
+
+data:
+  train: data/advbench/harmful_behaviors.csv
+  n_train: 10
+  offset: 0
+
+attack:
+  name: gcg
+  n_steps: 500
+  test_steps: 50
+  batch_size: 32
+  lr: 0.01
+  topk: 256
+  temp: 1
+  filter_cand: true
+  control_init: "! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !"
+
+output:
+  result_prefix: results/llama-2

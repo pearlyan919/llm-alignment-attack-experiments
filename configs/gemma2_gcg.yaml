@@ -1,0 +1,27 @@
+# GCG 攻击配置：Gemma-2-2B-IT
+# 与 experiments/configs/individual_gemma2.py 权威参数一致
+model:
+  path: gemma-2-2b-it
+  conversation_template: gemma
+
+tokenizer:
+  path: gemma-2-2b-it
+
+data:
+  train: data/advbench/harmful_behaviors.csv
+  n_train: 7
+  offset: 3
+
+attack:
+  name: gcg
+  n_steps: 500
+  test_steps: 50
+  batch_size: 16
+  lr: 0.01
+  topk: 64
+  temp: 1
+  filter_cand: true
+  control_init: "! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !"
+
+output:
+  result_prefix: results/gemma-2

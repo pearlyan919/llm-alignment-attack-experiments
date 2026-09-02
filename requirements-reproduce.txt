@@ -1,0 +1,4 @@
+# 纯 CPU 复现（run_all.sh / run_all.bat）所需的最少依赖
+#   pip install -r requirements-reproduce.txt
+numpy>=1.24
+matplotlib>=3.7

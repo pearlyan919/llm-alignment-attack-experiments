@@ -1,0 +1,19 @@
+# GPU 完整攻击/推理管线（run_full_pipeline.sh、scripts/transfer_test.py、
+# scripts/truncation_test.py、experiments/main.py）依赖参考。
+#
+# 说明：
+# - torch 请按本机 CUDA 版本安装，例如：
+#     pip install torch --index-url https://download.pytorch.org/whl/cu121
+# - transformers 需支持 Gemma-2 / Llama-3.2 架构（>=4.46，建议 4.4x 最新小版本）
+# - fschat 需内置 llama-2 / llama-3 / gemma 对话模板（>=0.2.36）；
+#   若版本过低可参考 scratch/setup_configs3.py 手工注册模板
+# - llama-2-7b 4bit 量化攻击需要 bitsandbytes 与 GPU 加速
+# - 攻击引擎为本地包：pip install -e .
+torch>=2.1
+transformers>=4.46
+accelerate>=0.33
+bitsandbytes>=0.43
+fschat>=0.2.36
+ml_collections
+numpy>=1.24
+matplotlib>=3.7

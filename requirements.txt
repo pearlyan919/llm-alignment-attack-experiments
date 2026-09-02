@@ -1,0 +1,9 @@
+# ---------------------------------------------------------------------------
+# 上游官方 requirements（demo.ipynb 等基础用途）。
+# 本仓库补充实验请按用途选择：
+#   - 纯 CPU 复现图表/CSV：requirements-reproduce.txt（python + numpy + matplotlib）
+#   - GPU 完整攻击管线：  requirements-gpu.txt（torch / transformers / fastchat ...）
+# ---------------------------------------------------------------------------
+transformers==4.28.1
+ml_collections
+fschat==0.2.20
