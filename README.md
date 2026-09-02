@@ -151,35 +151,6 @@ We include a few examples people told us when reproducing our results. They migh
 
 Currently the codebase only supports training with LLaMA or Pythia based models. Running the scripts with other models (with different tokenizers) will likely result in silent errors. As a tip, start by modifying [this function](https://github.com/llm-attacks/llm-attacks/blob/main/llm_attacks/base/attack_manager.py#L130) where different slices are defined for the model.
 
-## Citation
-
-The original GCG method and codebase are from the official `llm-attacks` repository. If you find this useful in your research, please consider citing:
-
-```
-@misc{zou2023universal,
-      title={Universal and Transferable Adversarial Attacks on Aligned Language Models}, 
-      author={Andy Zou and Zifan Wang and J. Zico Kolter and Matt Fredrikson},
-      year={2023},
-      eprint={2307.15043},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
-}
-```
-
-If you use the **supplementary experiments in this repository** (Exp.1: Llama-2 vs Llama-3.2 defense comparison; Exp.2: cross-model suffix transfer; Exp.3: suffix truncation robustness), please also consider citing:
-
-```
-@misc{pearlyan2026supplementary,
-      title={Supplementary Alignment Comparison Experiments on GCG Attacks},
-      author={pearlyan919},
-      year={2026},
-      howpublished={\url{https://github.com/pearlyan919/llm-alignment-attack-experiments}},
-      note={Three comparison experiments built on the official llm-attacks/GCG engine: defense divergence between aligned LLMs, cross-model suffix transferability, and suffix truncation robustness.}
-}
-```
-
-> 提示：`pearlyan919` 为 GitHub 用户名占位，投稿时请替换为真实姓名（BibTeX 需加载 `url` 宏包方可编译 `\url{}`）。
-
 ## License
 `llm-attacks` is licensed under the terms of the MIT license. See LICENSE for more details.
 
